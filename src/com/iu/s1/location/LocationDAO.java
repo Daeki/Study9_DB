@@ -16,8 +16,32 @@ public class LocationDAO {
 		dbConnect = new DBConnect();
 	}
 	
+	//Location Table에서 id와 일치하는 정보를 조회
 	public void getOne(int location_id) {
 		
+		Connection con = null;
+		PreparedStatement st=null;
+		ResultSet rs = null;
+		try {
+			con = dbConnect.getConnect();
+			
+			String sql="SELECT * FROM LOCATIONS WHERE LOCATION_ID=?";
+			
+			st = con.prepareStatement(sql);
+			
+			st.setInt(1, location_id);
+			
+			rs = st.executeQuery();
+			
+			if(rs.next()) {
+				//출력
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		
