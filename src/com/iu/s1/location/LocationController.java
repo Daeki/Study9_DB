@@ -17,8 +17,9 @@ public class LocationController {
 		//DB에서 Location Table의 모든 정보 조회
 		//ArrayList<LocationDTO> ar = locationDAO.getSearch("Vi");
 		//locationView.view(ar);
-		int count = locationDAO.getCount();
-		locationView.view(count);
+		//int count = locationDAO.getCount();
+		LocationDTO locationDTO  = locationDAO.getLocation(111);
+		locationView.view(locationDTO);
 		
 		
 		//locationView.view();
