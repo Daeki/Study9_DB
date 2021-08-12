@@ -18,20 +18,36 @@ public class Study9Main {
 		
 		DepartmentDAO dao = new DepartmentDAO();
 		DepartmentDTO departmentDTO = new DepartmentDTO();
-		departmentDTO.setDepartment_id(80);
+		departmentDTO.setDepartment_id(300);
+		departmentDTO.setDepartment_name("Test2");
+		departmentDTO.setManager_id(205);
+		departmentDTO.setLocation_id(1700);
 		
-		Depart_EmpDTO dto = dao.getJoin(departmentDTO);
+		int result = dao.setInsert(departmentDTO);
 		
-		System.out.println(dto.getDepartment_name());
-		
-		for(int i=0;i<dto.getAr().size();i++) {
-			System.out.println("=============================");
-			System.out.println(dto.getAr().get(i).getLast_name());
-			System.out.println(dto.getAr().get(i).getSalary());
-			System.out.println(dto.getAr().get(i).getHire_date());
-			System.out.println("=============================");
+		if(result>0) {
+			System.out.println("성공");
+		}else {
+			System.out.println("실패");
 		}
 		
+		
+		
+//		DepartmentDTO departmentDTO = new DepartmentDTO();
+//		departmentDTO.setDepartment_id(80);
+//		
+//		Depart_EmpDTO dto = dao.getJoin(departmentDTO);
+//		
+//		System.out.println(dto.getDepartment_name());
+//		
+//		for(int i=0;i<dto.getAr().size();i++) {
+//			System.out.println("=============================");
+//			System.out.println(dto.getAr().get(i).getLast_name());
+//			System.out.println(dto.getAr().get(i).getSalary());
+//			System.out.println(dto.getAr().get(i).getHire_date());
+//			System.out.println("=============================");
+//		}
+//		
 
 //		EmployeeDAO employeeDAO = new EmployeeDAO();
 //		EmployeeDTO employeeDTO = new EmployeeDTO();
